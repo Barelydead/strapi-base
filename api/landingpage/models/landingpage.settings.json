@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "landingpages",
   "info": {
-    "name": "Landingpage"
+    "name": "Landingpage",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -14,8 +15,13 @@
     "Layout": {
       "type": "dynamiczone",
       "components": [
-        "components.hero"
+        "components.hero",
+        "components.link",
+        "components.media-with-text"
       ]
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

@@ -32,7 +32,7 @@
     "link": {
       "type": "component",
       "repeatable": false,
-      "component": "atoms.link",
+      "component": "components.link",
       "required": true
     }
   }

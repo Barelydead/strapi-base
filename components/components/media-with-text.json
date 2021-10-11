@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_components_media_with_texts",
+  "info": {
+    "name": "media with text",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "text"
+    },
+    "text": {
+      "type": "text"
+    },
+    "alignment": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "center",
+        "bottom"
+      ],
+      "default": "center",
+      "required": true
+    },
+    "disposition": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ]
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
