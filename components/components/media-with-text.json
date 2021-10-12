@@ -1,8 +1,9 @@
 {
   "collectionName": "components_components_media_with_texts",
   "info": {
-    "name": "media with text",
-    "icon": "images"
+    "name": "Media with text",
+    "icon": "images",
+    "description": ""
   },
   "options": {},
   "attributes": {
