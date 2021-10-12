@@ -85,7 +85,7 @@ const createLandingpages = async () => {
 
   strapi.services.landingpage.create({
     title: 'Touch down!',
-    Layout: [
+    layout: [
       {
         __component: 'components.hero',
         label: 'Strapi',
