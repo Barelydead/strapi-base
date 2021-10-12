@@ -123,8 +123,8 @@ module.exports = async () => {
   const shouldSeed = await isFirstRun();
 
   if (shouldSeed) {
-    createAdmin();
-    createPlaceholderImage();
-    createLandingpages();
+    await createAdmin();
+    await createPlaceholderImage();
+    await createLandingpages();
   }
 };
