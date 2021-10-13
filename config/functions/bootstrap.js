@@ -126,6 +126,9 @@ const createLandingpages = async () => {
 
   strapi.services.landingpage.create({
     title: 'Touch down!',
+    metadata: {
+      title: 'Touch down!',
+    },
     layout: [
       {
         __component: 'components.hero',
@@ -133,6 +136,17 @@ const createLandingpages = async () => {
         heading: 'Så skapar vi värde',
         preamble:
           'För att skapa en webbplats eller en digital tjänst som faktiskt ger resultat krävs både rätt kompetens och rätt process. Och det har vi.',
+        link: {
+          text: 'Läs mer',
+          url: 'http://kodamera.se',
+        },
+        image: image,
+      },
+      {
+        __component: 'components.media-with-text',
+        label: 'Media with text',
+        heading: 'Förvaltning',
+        preamble: 'Vi har dedikerad personal som är experter på att förvalta webblösningar.',
         link: {
           text: 'Läs mer',
           url: 'http://kodamera.se',

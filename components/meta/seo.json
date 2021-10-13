@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_meta_seos",
+  "info": {
+    "name": "Seo",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 155
+    }
+  }
+}

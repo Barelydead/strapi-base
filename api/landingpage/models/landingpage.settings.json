@@ -12,6 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {}
+    },
     "layout": {
       "type": "dynamiczone",
       "components": [
@@ -21,9 +25,15 @@
       ],
       "pluginOptions": {}
     },
-    "title": {
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.seo",
+      "required": true
+    },
+    "slug": {
       "type": "string",
-      "pluginOptions": {}
+      "unique": true
     }
   }
 }

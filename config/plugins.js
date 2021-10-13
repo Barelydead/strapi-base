@@ -7,5 +7,18 @@ module.exports = {
       small: 500,
       xsmall: 64
     }
-  }
+  },
+  'config-sync': {
+    destination: "extensions/config-sync/files/",
+    minify: false,
+    importOnBootstrap: true,
+    include: [
+      "core-store",
+      "role-permissions"
+    ],
+    exclude: [
+      "core-store.plugin_users-permissions_grant",
+      "core-store.type_setup_initHasRun"
+    ]
+  },
 }
