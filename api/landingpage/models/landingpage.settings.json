@@ -18,10 +18,12 @@
         "components.hero",
         "components.link",
         "components.media-with-text"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     }
   }
 }

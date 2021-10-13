@@ -32,6 +32,48 @@ const isFirstRun = async () => {
 };
 
 /**
+ * Create default locales and set default.
+ */
+const setDefaultLocale = async () => {
+  const locales = [
+    {code: 'sv', name: 'Swedish (sv)'}
+  ]
+
+  const locale = await strapi.plugins.i18n.services.locales.create({
+    code: 'sv',
+    name: 'Swedish (sv)'
+  });
+
+  await strapi.plugins.i18n.services.locales.setDefaultLocale({code: 'sv'});
+
+  strapi.log.info('Swedish (sv) set as default locale');
+};
+
+/**
+ * Set default permissions on all collection types.
+ */
+const setDefaultPermissions = async () => {
+  const role = await strapi
+    .query("role", "users-permissions")
+    .findOne({ type: "public" });
+
+  const permissions = await strapi
+    .query("permission", "users-permissions")
+    .find({ type: "application", role: role.id, action_in: ['find', 'findone', 'count'] });
+
+  await Promise.all(
+    permissions.map(p =>
+      strapi
+        .query("permission", "users-permissions")
+        .update({ id: p.id }, { enabled: true })
+    )
+  );
+
+  strapi.log.info('Default permissions was enabled');
+  strapi.log.info('Find, findOne and Count is available for all collection types.');
+};
+
+/**
  * Create a super admin.
  */
 const createAdmin = async () => {
@@ -45,7 +87,6 @@ const createAdmin = async () => {
     isActive: true,
   };
 
-  //Check if any account exists.
   const admins = await strapi.query('user', 'admin').find();
 
   if (admins.length === 0) {
@@ -127,7 +168,9 @@ module.exports = async () => {
 
   if (shouldSeed) {
     await createAdmin();
+    await setDefaultLocale();
     await createPlaceholderImage();
     await createLandingpages();
+    await setDefaultPermissions();
   }
 };
