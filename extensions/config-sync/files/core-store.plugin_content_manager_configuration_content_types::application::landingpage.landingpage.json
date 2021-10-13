@@ -66,9 +66,9 @@
         "edit": {
           "label": "Slug",
           "description": "",
-          "placeholder": "",
+          "placeholder": "Auto generated from title",
           "visible": true,
-          "editable": true
+          "editable": false
         },
         "list": {
           "label": "Slug",
