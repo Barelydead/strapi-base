@@ -2,14 +2,18 @@
   "name": "next-gen-strapi-starter",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Strapi base installation",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "test": "jest"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^26",
+    "supertest": "^6.1.6"
+  },
   "dependencies": {
     "knex": "0.21.18",
     "mysql": "^2.18.1",
@@ -28,7 +32,7 @@
     "strapi-utils": "3.6.8"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Christofer Jungberg"
   },
   "strapi": {
     "uuid": "585e559c-5a3a-4e8e-a9ad-8aa771e522b8"
@@ -36,6 +40,14 @@
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
     "npm": "^6.0.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      ".tmp",
+      ".cache"
+    ],
+    "testEnvironment": "node"
   },
   "license": "MIT"
 }

@@ -11,7 +11,7 @@ module.exports = {
   'config-sync': {
     destination: "extensions/config-sync/files/",
     minify: false,
-    importOnBootstrap: true,
+    importOnBootstrap: false,
     include: [
       "core-store",
       "role-permissions"

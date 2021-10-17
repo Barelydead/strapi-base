@@ -177,6 +177,18 @@ const createPlaceholderImage = async () => {
   });
 };
 
+/**
+ * Import all configuration.
+ */
+const importAllConfig = async () => {
+  try {
+    await strapi.plugins['config-sync'].services.main.importAllConfig();
+    strapi.log.info('Imported all site configuration.')
+  } catch(e) {
+    strapi.log.error('Something went wrong during config import.')
+  }
+}
+
 module.exports = async () => {
   const shouldSeed = await isFirstRun();
 
@@ -185,6 +197,6 @@ module.exports = async () => {
     await setDefaultLocale();
     await createPlaceholderImage();
     await createLandingpages();
-    await setDefaultPermissions();
+    await importAllConfig();
   }
 };
