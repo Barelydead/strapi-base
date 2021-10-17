@@ -128,6 +128,8 @@ const createLandingpages = async () => {
     title: 'Touch down!',
     metadata: {
       title: 'Touch down!',
+      description: 'A base landingpage',
+      image: image,
     },
     layout: [
       {

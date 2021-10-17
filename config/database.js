@@ -4,12 +4,8 @@ module.exports = ({ env }) => ({
     default: {
       connector: 'bookshelf',
       settings: {
-        client: 'mysql',
-        host: 'localhost',
-        port: 3306,
-        database: 'strapi',
-        username: 'root',
-        password: ''
+        client: 'sqlite',
+        database: '/tmp/database.sqlite', // Database can be found in .tmp/data.db
       },
       options: {
         useNullAsDefault: true,
