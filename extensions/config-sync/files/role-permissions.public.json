@@ -6,14 +6,6 @@
     "application": {
       "controllers": {
         "landingpage": {
-          "findone": {
-            "enabled": true,
-            "policy": ""
-          },
-          "find": {
-            "enabled": true,
-            "policy": ""
-          },
           "count": {
             "enabled": true,
             "policy": ""
@@ -23,6 +15,40 @@
             "policy": ""
           },
           "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": true,
+            "policy": ""
+          },
+          "findone": {
+            "enabled": true,
+            "policy": ""
+          },
+          "update": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "article": {
+          "count": {
+            "enabled": false,
+            "policy": ""
+          },
+          "create": {
+            "enabled": false,
+            "policy": ""
+          },
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findone": {
             "enabled": false,
             "policy": ""
           },
@@ -63,6 +89,10 @@
             "enabled": false,
             "policy": ""
           },
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          },
           "find": {
             "enabled": false,
             "policy": ""
@@ -72,10 +102,6 @@
             "policy": ""
           },
           "previewmanyrelations": {
-            "enabled": false,
-            "policy": ""
-          },
-          "delete": {
             "enabled": false,
             "policy": ""
           },
@@ -135,11 +161,11 @@
             "enabled": false,
             "policy": ""
           },
-          "find": {
+          "delete": {
             "enabled": false,
             "policy": ""
           },
-          "delete": {
+          "find": {
             "enabled": false,
             "policy": ""
           },
@@ -541,6 +567,17 @@
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
       }
+    },
+    "content-search": {
+      "controllers": {
+        "content-search": {
+          "index": {
+            "enabled": true,
+            "policy": ""
+          }
+        }
+      },
+      "information": {}
     }
   }
 }

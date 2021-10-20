@@ -25,21 +25,20 @@ afterAll(async () => {
   }
 });
 
-it('strapi is defined', () => {
-  expect(strapi).toBeDefined();
-});
-
-it('bootstrapping sets sv as default locale', async () => {
-  const locale = await strapi.plugins.i18n.services.locales.getDefaultLocale();
-
-  expect(locale).toBe('sv');
-});
-
-it('bootstrapping created default content', async () => {
-  const landingpages = await strapi.query('landingpage').find();
-
-  expect(landingpages.length).toBe(1);
-});
+describe('boostrapping and testbase', () => {
+  it('strapi is defined', () => {
+    expect(strapi).toBeDefined();
+  });
+  
+  it('bootstrapping sets sv as default locale', async () => {
+    const locale = await strapi.plugins.i18n.services.locales.getDefaultLocale();
+  
+    expect(locale).toBe('sv');
+  });
+})
 
 // Test the landinpage collection.
 require('./landingpage');
+
+// Test the content-search collection.
+require('./content-search');

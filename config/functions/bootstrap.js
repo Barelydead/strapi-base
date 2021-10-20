@@ -197,8 +197,11 @@ module.exports = async () => {
   if (shouldSeed) {
     await createAdmin();
     await setDefaultLocale();
-    await createPlaceholderImage();
-    await createLandingpages();
+
+    if (process.env.NODE_ENV !== 'test') {
+      await createPlaceholderImage();
+      await createLandingpages();
+    }
     await importAllConfig();
   }
 };

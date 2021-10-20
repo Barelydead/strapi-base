@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "content-search.index",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

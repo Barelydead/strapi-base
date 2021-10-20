@@ -6,14 +6,6 @@
     "application": {
       "controllers": {
         "landingpage": {
-          "find": {
-            "enabled": false,
-            "policy": ""
-          },
-          "findone": {
-            "enabled": false,
-            "policy": ""
-          },
           "count": {
             "enabled": false,
             "policy": ""
@@ -23,6 +15,40 @@
             "policy": ""
           },
           "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findone": {
+            "enabled": false,
+            "policy": ""
+          },
+          "update": {
+            "enabled": false,
+            "policy": ""
+          }
+        },
+        "article": {
+          "count": {
+            "enabled": false,
+            "policy": ""
+          },
+          "create": {
+            "enabled": false,
+            "policy": ""
+          },
+          "delete": {
+            "enabled": false,
+            "policy": ""
+          },
+          "find": {
+            "enabled": false,
+            "policy": ""
+          },
+          "findone": {
             "enabled": false,
             "policy": ""
           },
@@ -541,6 +567,17 @@
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
       }
+    },
+    "content-search": {
+      "controllers": {
+        "content-search": {
+          "index": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {}
     }
   }
 }
