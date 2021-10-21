@@ -13,6 +13,7 @@
 const path = require('path');
 const fs = require('fs');
 const mime = require('mime-types');
+const faker = require('faker');
 
 /**
  * Check if app is on first run.
@@ -119,6 +120,18 @@ const getPlaceHolderImage = async () =>
   await strapi.plugins.upload.services.upload.fetch({ id: 1 });
 
 /**
+ * Create Articles
+ */
+const createArticles = async () => {
+  Array(10).fill(1).map(() => {
+    strapi.services.article.create({
+      title: faker.lorem.words(),
+      body: faker.lorem.paragraphs(),
+    })
+  })
+}
+
+/**
  * Create landingpages
  */
 const createLandingpages = async () => {
@@ -197,9 +210,9 @@ module.exports = async () => {
   if (shouldSeed) {
     await createAdmin();
     await setDefaultLocale();
-
     if (process.env.NODE_ENV !== 'test') {
       await createPlaceholderImage();
+      await createArticles();
       await createLandingpages();
     }
     await importAllConfig();
