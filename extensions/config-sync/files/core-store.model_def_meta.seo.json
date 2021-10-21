@@ -1,0 +1,36 @@
+{
+  "key": "model_def_meta.seo",
+  "value": {
+    "uid": "meta.seo",
+    "collectionName": "components_meta_seos",
+    "info": {
+      "name": "Seo",
+      "icon": "search"
+    },
+    "options": {
+      "timestamps": false
+    },
+    "attributes": {
+      "title": {
+        "type": "string"
+      },
+      "image": {
+        "model": "file",
+        "via": "related",
+        "allowedTypes": [
+          "images"
+        ],
+        "plugin": "upload",
+        "required": false,
+        "pluginOptions": {}
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 155
+      }
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

@@ -1,0 +1,26 @@
+{
+  "key": "model_def_components.link",
+  "value": {
+    "uid": "components.link",
+    "collectionName": "components_atoms_links",
+    "info": {
+      "name": "Link",
+      "icon": "link",
+      "description": ""
+    },
+    "options": {
+      "timestamps": false
+    },
+    "attributes": {
+      "text": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      }
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

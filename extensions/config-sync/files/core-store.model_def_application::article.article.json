@@ -1,0 +1,60 @@
+{
+  "key": "model_def_application::article.article",
+  "value": {
+    "uid": "application::article.article",
+    "collectionName": "articles",
+    "kind": "collectionType",
+    "info": {
+      "name": "Article",
+      "description": ""
+    },
+    "options": {
+      "increments": true,
+      "timestamps": [
+        "created_at",
+        "updated_at"
+      ],
+      "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+      "title": {
+        "type": "string"
+      },
+      "body": {
+        "type": "richtext"
+      },
+      "landingpages": {
+        "collection": "landingpage",
+        "attribute": "landingpage",
+        "column": "id",
+        "isVirtual": true
+      },
+      "published_at": {
+        "type": "datetime",
+        "configurable": false,
+        "writable": true,
+        "visible": false
+      },
+      "created_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      },
+      "updated_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      }
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

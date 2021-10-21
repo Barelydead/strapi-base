@@ -1,0 +1,48 @@
+{
+  "key": "model_def_components.hero",
+  "value": {
+    "uid": "components.hero",
+    "collectionName": "components_copmonents_heroes",
+    "info": {
+      "name": "Hero",
+      "icon": "money-check",
+      "description": ""
+    },
+    "options": {
+      "timestamps": false
+    },
+    "attributes": {
+      "label": {
+        "type": "string",
+        "required": true
+      },
+      "heading": {
+        "type": "string",
+        "required": true
+      },
+      "preamble": {
+        "type": "text",
+        "required": true
+      },
+      "image": {
+        "model": "file",
+        "via": "related",
+        "allowedTypes": [
+          "images"
+        ],
+        "plugin": "upload",
+        "required": false,
+        "pluginOptions": {}
+      },
+      "link": {
+        "type": "component",
+        "repeatable": false,
+        "component": "components.link",
+        "required": true
+      }
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

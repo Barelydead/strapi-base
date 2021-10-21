@@ -16,8 +16,8 @@
         "edit": {},
         "list": {
           "label": "Id",
-          "searchable": true,
-          "sortable": true
+          "searchable": false,
+          "sortable": false
         }
       },
       "title": {
@@ -70,7 +70,6 @@
         "image",
         "description"
       ],
-      "editRelations": [],
       "edit": [
         [
           {
@@ -85,10 +84,11 @@
         [
           {
             "name": "image",
-            "size": 12
+            "size": 6
           }
         ]
-      ]
+      ],
+      "editRelations": []
     },
     "isComponent": true
   },

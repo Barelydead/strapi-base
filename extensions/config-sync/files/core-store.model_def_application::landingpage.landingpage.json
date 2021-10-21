@@ -1,0 +1,71 @@
+{
+  "key": "model_def_application::landingpage.landingpage",
+  "value": {
+    "uid": "application::landingpage.landingpage",
+    "collectionName": "landingpages",
+    "kind": "collectionType",
+    "info": {
+      "name": "Landingpage",
+      "description": ""
+    },
+    "options": {
+      "increments": true,
+      "timestamps": [
+        "created_at",
+        "updated_at"
+      ],
+      "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+      "title": {
+        "type": "string",
+        "pluginOptions": {}
+      },
+      "layout": {
+        "type": "dynamiczone",
+        "components": [
+          "components.hero",
+          "components.link",
+          "components.media-with-text"
+        ],
+        "pluginOptions": {}
+      },
+      "metadata": {
+        "type": "component",
+        "repeatable": false,
+        "component": "meta.seo",
+        "required": true
+      },
+      "slug": {
+        "type": "string",
+        "unique": true
+      },
+      "published_at": {
+        "type": "datetime",
+        "configurable": false,
+        "writable": true,
+        "visible": false
+      },
+      "created_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      },
+      "updated_by": {
+        "model": "user",
+        "plugin": "admin",
+        "configurable": false,
+        "writable": false,
+        "visible": false,
+        "private": true
+      }
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}
