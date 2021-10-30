@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/index",
+      "handler": "global.getIndexes",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/clearDocuments",
+      "handler": "global.clearDocuments",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/addDocuments",
+      "handler": "global.addDocuments",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
