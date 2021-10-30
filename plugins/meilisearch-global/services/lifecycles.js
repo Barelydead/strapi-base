@@ -4,12 +4,11 @@
  * to customize this model
  */
 
-async function afterCreate(result, collection, client) {
-  result.id = `${collection}-${result.id}`;
-  result.collectionType = collection;
+async function afterCreate(result, collectionType, client) {
   try {
     await client.addDocuments({
       indexUid: 'global',
+      collectionType,
       data: [result],
     })
   } catch (e) {
@@ -17,9 +16,7 @@ async function afterCreate(result, collection, client) {
   }
 }
 
-async function afterDelete(result, collection, client) {
-  result.id = `${collection}-${result.id}`;
-  result.collectionType = collection;
+async function afterDelete(result, collectionType, client) {
   try {
     // works with both delete methods
     const documentIds = Array.isArray(result)
@@ -27,6 +24,7 @@ async function afterDelete(result, collection, client) {
       : [result.id]
     await client.deleteDocuments({
       indexUid: 'global',
+      collectionType,
       documentIds,
     })
   } catch (e) {
@@ -34,12 +32,11 @@ async function afterDelete(result, collection, client) {
   }
 }
 
-async function afterUpdate(result, collection, client) {
-  result.id = `${collection}-${result.id}`;
-  result.collectionType = collection;
+async function afterUpdate(result, collectionType, client) {
   try {
     await client.addDocuments({
       indexUid: 'global',
+      collectionType,
       data: [result],
     })
   } catch (e) {

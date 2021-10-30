@@ -4,7 +4,6 @@
  *
  * @description: A set of functions called "actions" of the `meilisearch` plugin.
  */
-const { flatten } = require('lodash');
 
 async function getIndexes() {
   return await strapi.plugins['meilisearch-global'].services.client.getIndexes();
@@ -21,13 +20,12 @@ async function clearDocuments() {
 }
 
 async function addDocuments() {
-  const contentTypes = await strapi.plugins['meilisearch-global'].services.misc.getIndexableContentTypes();
+  const collectionTypes = await strapi.plugins['meilisearch-global'].services.misc.getIndexableCollectionTypes();
 
-  const data = await Promise.all(contentTypes.map(async (type) => {
-    return await strapi.services[type].find();
-  })).then(flatten);
-
-  await strapi.plugins['meilisearch-global'].services.client.addDocuments({ indexUid: 'global', data: data });
+  collectionTypes.map(async (collectionType) => {
+    const documents = await strapi.services[collectionType].find();
+    await strapi.plugins['meilisearch-global'].services.client.addDocuments({ indexUid: 'global', collectionType, data: documents });
+  });
 
   return 'added all articles to index';
 }

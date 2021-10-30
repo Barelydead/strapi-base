@@ -2,6 +2,7 @@
 
 const client = require('../../services/client.js');
 const lifecycles = require('../../services/lifecycles.js');
+const misc = require('../../services/misc.js');
 
 /**
  * An asynchronous bootstrap function that runs before
@@ -13,15 +14,12 @@ const lifecycles = require('../../services/lifecycles.js');
  * See more details here: https://strapi.io/documentation/developer-docs/latest/concepts/configurations.html#bootstrap
  */
 
-function addLifecycles() {
+async function addLifecycles() {
   // Add lifecyles
-  const collectionTypes = [
-    'article',
-    'landingpage'
-  ];
+  const collectionTypes = await misc.getIndexableCollectionTypes();
 
-  collectionTypes.map((collection) => {
-    const model = strapi.models[collection]
+  collectionTypes.map((type) => {
+    const model = strapi.models[type]
     const lifeCycleMethods = Object.keys(lifecycles);
     model.lifecycles = model.lifecycles || {}
 
@@ -32,7 +30,7 @@ function addLifecycles() {
       // First run previously definied function and append our method.
       model.lifecycles[methodName] = data => {
         fn(data)
-        lifecycles[methodName](data, collection, client)
+        lifecycles[methodName](data, type, client)
       }
     })
   })

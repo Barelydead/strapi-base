@@ -25,13 +25,19 @@ function removeDateLogs(document) {
   return noDateLogDocument
 }
 
-async function addDocuments({ indexUid, data }) {
-  const noDateLogDocuments = data.map(document => removeDateLogs(document))
+async function addDocuments({ indexUid, collectionType, data }) {
+  const documents = data.map((document) => {
+    document.id = `${collectionType}-${document.id}`;
+    document.collectionType = collectionType;
+    return document;
+  });
+  const noDateLogDocuments = documents.map(document => removeDateLogs(document))
   return client.index(indexUid).addDocuments(noDateLogDocuments)
 }
 
-async function deleteDocuments({ indexUid, documentIds }) {
-  return client.index(indexUid).deleteDocuments(documentIds)
+async function deleteDocuments({ indexUid, collectionType, documentIds }) {
+  const ids = documentIds.map((id) => `${collectionType}-${id}`)
+  return client.index(indexUid).deleteDocuments(ids)
 }
 
 async function deleteAllDocuments({ indexUid }) {
