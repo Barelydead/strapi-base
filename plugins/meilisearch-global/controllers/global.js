@@ -27,7 +27,7 @@ async function addDocuments() {
     await strapi.plugins['meilisearch-global'].services.client.addDocuments({ indexUid: 'global', collectionType, data: documents });
   });
 
-  return 'added all articles to index';
+  return 'added all documets to index';
 }
 
 module.exports = {
