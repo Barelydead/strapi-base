@@ -14,7 +14,8 @@
         "created_at",
         "updated_at"
       ],
-      "draftAndPublish": true
+      "draftAndPublish": true,
+      "indexGlobal": true
     },
     "pluginOptions": {},
     "attributes": {

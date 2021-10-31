@@ -1,0 +1,7 @@
+{
+  "key": "plugin_meilisearch_store_meilisearch_hooked",
+  "value": [],
+  "type": "object",
+  "environment": "development",
+  "tag": ""
+}

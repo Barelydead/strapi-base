@@ -5,7 +5,7 @@
   "permissions": {
     "application": {
       "controllers": {
-        "landingpage": {
+        "article": {
           "count": {
             "enabled": false,
             "policy": ""
@@ -31,7 +31,7 @@
             "policy": ""
           }
         },
-        "article": {
+        "landingpage": {
           "count": {
             "enabled": false,
             "policy": ""
@@ -204,6 +204,17 @@
         "registry": "https://registry.npmjs.org/"
       }
     },
+    "content-picker": {
+      "controllers": {
+        "content-picker": {
+          "index": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {}
+    },
     "content-type-builder": {
       "controllers": {
         "builder": {
@@ -367,6 +378,80 @@
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
       }
+    },
+    "meilisearch-global": {
+      "controllers": {
+        "global": {
+          "adddocuments": {
+            "enabled": false,
+            "policy": ""
+          },
+          "cleardocuments": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getindexes": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {}
+    },
+    "meilisearch": {
+      "controllers": {
+        "meilisearch": {
+          "addcollection": {
+            "enabled": false,
+            "policy": ""
+          },
+          "addcredentials": {
+            "enabled": false,
+            "policy": ""
+          },
+          "batchaddcollection": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deleteallindexes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "deleteindex": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcollections": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getcredentials": {
+            "enabled": false,
+            "policy": ""
+          },
+          "getindexes": {
+            "enabled": false,
+            "policy": ""
+          },
+          "indexdocuments": {
+            "enabled": false,
+            "policy": ""
+          },
+          "reload": {
+            "enabled": false,
+            "policy": ""
+          },
+          "updatecollections": {
+            "enabled": false,
+            "policy": ""
+          },
+          "waitfordocumentstobeindexed": {
+            "enabled": false,
+            "policy": ""
+          }
+        }
+      },
+      "information": {}
     },
     "upload": {
       "controllers": {
@@ -567,17 +652,6 @@
         "ratings": 5,
         "registry": "https://registry.npmjs.org/"
       }
-    },
-    "content-search": {
-      "controllers": {
-        "content-search": {
-          "index": {
-            "enabled": false,
-            "policy": ""
-          }
-        }
-      },
-      "information": {}
     }
   }
 }
