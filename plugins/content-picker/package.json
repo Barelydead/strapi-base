@@ -1,0 +1,30 @@
+{
+  "name": "strapi-plugin-contentPicker",
+  "version": "0.0.0",
+  "description": "This is the description of the plugin.",
+  "strapi": {
+    "name": "contentPicker",
+    "icon": "plug",
+    "description": "Description of contentPicker plugin."
+  },
+  "dependencies": {
+    "strapi-helper-plugin": "^3.6.8"
+  },
+  "author": {
+    "name": "A Strapi developer",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

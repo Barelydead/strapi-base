@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "content-picker.index",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
